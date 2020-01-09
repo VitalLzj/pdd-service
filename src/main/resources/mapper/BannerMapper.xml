@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.shuto.pdd.mapper.BannerMapper">
+    <resultMap id="BaseResultMap" type="cn.shuto.pdd.pojo.Banner">
+        <result column="bid" property="bId"/>
+        <result column="imageurl" property="imageUrl"/>
+        <result column="caption" property="caption"/>
+        <result column="imageid" property="imageId"/>
+    </resultMap>
+
+    <select id="findById" resultMap="BaseResultMap">
+        select * from banner where bid = #{bId}
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from banner
+    </select>
+</mapper>
